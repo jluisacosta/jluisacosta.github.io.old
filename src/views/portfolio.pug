@@ -1,0 +1,36 @@
+mixin grid-item(href, src)
+  div(class!=attributes.class)
+    .Portfolio-thumbnail
+      img.responsive-img.hoverable(src=src)
+      .Portfolio-thumbnailMask
+      .Portfolio-thumbnailInfo.valign-wrapper(data-info!=attributes["data-info"])
+        .container.center.valign
+          a.btn-floating.waves-effect.waves-light.modal-trigger(href='#modal')
+            i.material-icons zoom_in
+          a.btn-floating.waves-effect.waves-light(href=href, target='_blank')
+            i.material-icons link
+
+section#portfolio.Portfolio.container.section.scrollspy
+  .Portfolio-content.container
+    h2.center-align.animated.bounceOutDown Portfolio
+    h3.center-align.animated.bounceOutDown My latest works
+    ul.Portfolio-filters.center-align.animated.bounceOutDown
+      li
+        a.waves-effect.waves-light.btn-flat.Portfolio-all All
+      li
+        a.waves-effect.waves-light.btn-flat.Portfolio-filter More Recent
+    .row.section.animated.bounceOutDown
+      .col.l12.m12.s12
+        .grid
+          .grid-sizer
+          +grid-item('http://www.numeapp.net/','./img/numeapp.png')(class='grid-item hoverable filter', data-info='Nume App (Proof of concept & Prototype)')
+          +grid-item('https://github.com/jluisacosta','./img/gh-profile.png')(class='grid-item hoverable', data-info='Project Repositories ( Visit live project URLs )')
+          +grid-item('https://www.comidaatucasa.com/','./img/comidaatucasa.png')(class='grid-item hoverable filter', data-info='Ordering Online System ( Front-End and Back-End Development )')
+          +grid-item('https://codepen.io/ybexfish/','./img/cp-showcase.png')(class='grid-item hoverable', data-info='JavaScript exercises showcase for Free Code Camp Front-End Certification')
+          +grid-item('https://www.repartotodo.com','./img/repartotodo.png')(class='grid-item hoverable filter', data-info='Delivery Service On Demand ( Mobile and Web Site Development )')
+          +grid-item('https://github.com/jluisacosta/platzigram','./img/platzigram.png')(class='grid-item hoverable', data-info='JavaScript Full Stack Web Application ( In Progress )')
+
+  #modal.Portfolio-modal.modal
+    .modal-content
+      h5.Portfolio-modalHeader.center-align
+      img.Portfolio-modalImage.center-block.z-depth-2

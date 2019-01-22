@@ -1,0 +1,146 @@
+$skills-bg-width: 100%;
+$skills-content-width: 85%;
+$donut-side: 194px;
+
+.Skills{
+  @extend .white-text;
+  position: relative;
+  padding: 0;
+
+  .parallax{
+    img {
+      filter: brightness(.6);
+    }
+  }
+
+  &-background {
+    width: $skills-bg-width;
+  }
+
+  &-mask {
+    @extend .cyan, .lighten-1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .15;
+  }
+
+  &-content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 0;
+
+    .container {
+      width: $skills-content-width;
+
+      h3 {
+        color: #ffea00 !important;
+      }
+
+      .row.section {
+        margin-bottom: 0;
+      }
+
+      .graph-donut {
+        border-radius: 50%;
+        border: 2px solid #00e5ff ;
+      	position: relative;
+      	display: inline-block;
+      	width: $donut-side;
+      	height: $donut-side;
+      	text-align: center;
+
+
+        canvas {
+        	position: absolute;
+        	top: 5px;
+        	left: 5px;
+        }
+
+        .percent {
+          @extend .cyan-text, .text-accent-1;
+        	display: inline-block;
+        	line-height: $donut-side;
+        	z-index: 2;
+          font-size: 2rem;
+          font-weight: 300;
+
+          &:after {
+        	  content: '%';
+        	  margin-left: 0.3rem;
+        	  font-size: 2rem;
+          }
+
+          &.no-percent:after{
+            content: '';
+          }
+        }
+      }
+
+      p {
+        @extend .white-text;
+        font-weight: 300;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  $donut-side-m: 144px;
+
+  .Skills{
+    &-content {
+      .container {
+        .graph-donut {
+          width: $donut-side-m;
+          height: $donut-side-m;
+
+          canvas {
+            width: 130px !important;
+            height: 130px !important;
+          }
+
+          .percent {
+          	line-height: $donut-side-m;
+            font-size: 1.7rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$small-and-down} {
+  $donut-side-s: 114px;
+
+  .Skills{
+    &-content {
+      .container {
+        .graph-donut {
+          width: $donut-side-s;
+          height: $donut-side-s;
+
+          canvas {
+            width: 100px !important;
+            height: 100px !important;
+          }
+
+          .percent {
+          	line-height: $donut-side-s;
+            font-size: 1.3rem;
+
+            &:after {
+          	  margin-left: 0.3rem;
+          	  font-size: 1.3rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

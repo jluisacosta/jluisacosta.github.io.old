@@ -1,0 +1,111 @@
+$website-max-width: 1920px;
+
+/*Editorial*/
+* {
+  -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+body, html {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2 {
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3, h4, h5, h6 {
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+h3 {
+  @extend .red-text, .text-lighten-1;
+  font-size: 2.5rem;
+}
+
+h4, h5 {
+  @extend .cyan-text, .text-darken-1;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h6 {
+  @extend .blue-grey-text, .text-darken-4;
+  font-weight: 300;
+  font-size: 1.4rem;
+}
+
+p {
+  @extend .blue-grey-text, .text-darken-3;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/*Materialize*/
+.container {
+  max-width: $website-max-width;
+}
+
+header, nav, section {
+  &.container {
+    width: 100%;
+  }
+}
+
+a.btn-large {
+  @extend .cyan, .darken-1;
+
+  &:hover {
+    @extend .yellow, .darken-2;
+  }
+}
+
+/*RESPONSIVE*/
+
+@media #{$medium-and-down} {
+  // styles for medium screens and down
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2.5rem !important;
+  }
+
+  h3 {
+    font-size: 2rem !important;
+  }
+
+  h4 {
+    font-size: 1.5rem !important;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+
+@media #{$small-and-down} {
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  h3 {
+    font-size: 1.5rem !important;
+  }
+
+  h4 {
+    font-size: 1.3rem !important;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}

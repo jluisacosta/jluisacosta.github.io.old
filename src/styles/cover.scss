@@ -1,0 +1,185 @@
+$logo-width: 80px;
+
+.Cover {
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  line-height: 0;
+
+  > img {
+    width: 100%;
+  }
+
+  > video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    //display: none;
+  }
+
+  > div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &-mask {
+    @extend .cyan, .lighten-1;
+    opacity: .25;
+  }
+
+  &-intro {
+
+    h1 {
+      @extend .white-text;
+      font-size: 4.4rem;
+    }
+
+    h2 {
+      @extend .yellow-text, .text-accent-3;
+      font-size: 1.5rem;
+    }
+
+    img {
+      //margin-top: 4rem;
+      width: $logo-width !important;
+    }
+
+    ul {
+      //margin: 3rem 0 6rem 0;
+
+      li {
+        display: inline-block;
+        margin: 0 .8rem;
+
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: transparent;
+          border: 2.5px solid #00bcd4;
+          width: 3.5rem;
+          height: 3.5rem;
+
+          i {
+            margin-top: .1rem;
+            font-size: 1.6rem;
+            font-weight: 100;
+          }
+
+          &:hover{
+            @extend .white-text, .cyan;
+          }
+        }
+      }
+    }
+  }
+
+  &-downButton {
+    @extend .white-text;
+
+    i{
+      margin-top:2rem;
+    }
+
+    &:hover {
+      @extend .yellow-text, .text-accent-3;
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  $logo-width-m: 70px;
+
+  .Cover{
+    height: 100vh;
+
+    > img {
+      position: relative;
+      height: 100%;
+    }
+
+    > video {
+      height: 100%;
+    }
+
+    &-intro {
+      img {
+        width: $logo-width-m !important;
+      }
+
+      h1{
+        font-size: 4rem !important;
+      }
+
+      h2 {
+        font-size: 1.5rem !important;
+      }
+
+      ul {
+        //margin: 2rem 0 3.5rem 0 !important;
+
+        li {
+          display: inline-block;
+          margin: 0 .6rem;
+
+          a {
+            width: 3rem;
+            height: 3rem;
+
+            i {
+              margin-top: .3rem;
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+
+    &-downButton{
+      i{
+        margin-top: 1rem;
+        font-size: 3rem !important;
+      }
+    }
+  }
+}
+
+@media #{$small-and-down} {
+  $logo-width-s: 60px;
+  .Cover {
+
+    > video {
+      display: none;
+    }
+
+    &-mask{
+      background: url('./img/mobile-bg.png') center;
+      opacity: 1;
+    }
+
+    &-intro {
+      h1 {
+        font-size: 2.5rem !important;
+      }
+
+      h2 {
+        font-size: 1.2rem !important;
+      }
+
+      img {
+        //margin-top: 2rem !important;
+        width: $logo-width-s !important;
+      }
+    }
+
+    &-downButton{
+      i{
+        margin-top: 1rem;
+        font-size: 3rem !important;
+      }
+    }
+  }
+}

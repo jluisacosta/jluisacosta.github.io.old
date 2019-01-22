@@ -1,0 +1,42 @@
+nav.Menu.container.scrollspy
+  .nav-wrapper.container
+    a.Menu-logo.brand-logo.center(href='#cover')
+      img.responsive-img(src='./img/jluisacosta-logo-sm.png')
+    ul.Menu-desktop.hide-on-med-and-down.left.table-of-contents
+      li
+        a(href='#about-me') About me
+      li
+        a(href='#my-skills') My skills
+      li
+        a(href='#resume') Resume
+    ul.Menu-desktop.hide-on-med-and-down.right.table-of-contents
+      li
+        a(href='#services') Services
+      li
+        a(href='#portfolio') Portfolio
+      li
+        a(href='#contact') Contact
+    a.Menu-hamburger.button-collapse(href='#!', data-activates='Menu-mobile')
+      i.material-icons menu
+    ul#Menu-mobile.side-nav
+      li
+        a(href='#about-me') About me
+      li
+        a(href='#my-skills') My skills
+      li
+        a(href='#resume') Resume
+      li
+        a(href='#services') Services
+      li
+        a(href='#portfolio') Portfolio
+      li
+        a(href='#contact') Contact
+      li.divider
+      li
+        a.dropdown-button(href='#!', data-activates='Menu-dropdownLanguageMobile') Language
+          i.material-icons.right arrow_drop_down
+ul#Menu-dropdownLanguageMobile.dropdown-content
+  li
+    a(href='#!') English
+  li
+    a(href='#!') Spanish

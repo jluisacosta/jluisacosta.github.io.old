@@ -1,0 +1,124 @@
+$menu-container-width: 90%;
+$navbar-height: 70px;
+
+.Menu {
+  right: 0;
+  left: 0;
+  line-height: $navbar-height;
+  margin-top: -$navbar-height;
+  height: $navbar-height;
+  opacity: .9;
+  text-transform: uppercase;
+
+  &.pin-top {
+    position: relative;
+    z-index: 1000 !important;
+    box-shadow: none;
+    background-color: transparent;
+    transition: background-color .5s ease;
+
+    .brand-logo {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  &.pinned {
+    @extend .cyan;
+    position: fixed !important;
+    z-index: 1000 !important;
+    margin-top: 0;
+    border-bottom: 2px solid #00e5ff;
+    transition: background-color .5s ease;
+  }
+
+  .container {
+    width: $menu-container-width;
+  }
+
+  &-logo {
+    line-height: 0;
+
+    img {
+      padding: .8rem;
+      width: $navbar-height+6;
+      transition: all .5s ease;
+      transform: scale(0) rotate(0deg);
+    }
+
+    &--show {
+      img {
+        transform: scale(1) rotate(360deg);
+      }
+
+      &:hover img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &-desktop {
+
+    li {
+      padding: 0;
+
+      a{
+        @extend .white-text;
+        display: block;
+        padding: 0 15px;
+        line-height: $navbar-height;
+        height: auto;
+        font-weight: 300;
+
+        &:hover, &.active {
+          @extend .yellow-text;
+          padding: 0 15px;
+          border: 0;
+          border-bottom: 2px solid #fdd835 !important;
+          height: $navbar-height;
+        }
+
+        &.active {
+          background-color: rgba(0, 0, 0, 0.1);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  $navbar-height-m: 50px;
+
+  .Menu{
+    line-height: $navbar-height-m;
+    margin-top: -$navbar-height-m;
+    height: $navbar-height-m;
+
+    &-logo {
+
+      img {
+        padding: .5rem;
+        width: $navbar-height-m+5;
+      }
+    }
+
+    &-hamburger{
+      height: $navbar-height-m !important;
+      line-height: $navbar-height-m !important;
+
+      i{
+        height: $navbar-height-m;
+        line-height: $navbar-height-m !important;
+      }
+    }
+  }
+}
+
+@media #{$small-and-down} {
+  .Menu{
+    .side-nav{
+      width: 250px;
+    }
+  }
+}

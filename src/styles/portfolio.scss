@@ -1,0 +1,138 @@
+$portfolio-container-width: 80%;
+$n-grid-cols: 3;
+$col-width: 100%/$n-grid-cols;
+$mask-color: black;
+
+.Portfolio {
+  .container {
+    width: $portfolio-container-width;
+  }
+
+  &-filters {
+    li {
+      display: inline-block;
+      margin: 0 .2rem;
+
+      a {
+        @extend .white-text, .cyan, .darken-1;
+
+        &:hover{
+          @extend .yellow, .darken-2;
+        }
+      }
+    }
+  }
+
+  .grid-sizer, .grid-item {
+    width: $col-width;
+  }
+
+  .grid-item {
+    padding: .5rem;
+    line-height: 0;
+  }
+
+  &-thumbnail {
+    position: relative;
+
+    &Mask, &Info {
+      transform: scale(0);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    &Mask {
+      transition: all .1s ease;
+      background-color: $mask-color;
+      opacity: .5;
+    }
+
+    &Info {
+      transition: all .6s ease;
+
+      a{
+        @extend .red, .lighten-1;
+        margin: 0 .5rem;
+
+        &:hover {
+          @extend .yellow, .darken-2;
+        }
+      }
+    }
+
+    &:hover &Mask, {
+      transform: scale(1);
+    }
+
+    &:hover &Info{
+      transform: scale(1);
+
+      a{
+        min-width: 1rem;
+        width: 37px;
+        height: 37px;
+      }
+    }
+  }
+
+  &-modal {
+    max-height: 80%;
+    width: 60%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  $n-grid-cols-m: 2;
+  $col-width-m: 100%/$n-grid-cols-m;
+
+  .Portfolio {
+
+    .grid-sizer, .grid-item {
+      width: $col-width-m;
+    }
+
+    &-thumbnail {
+      &:hover &Info{
+        a{
+          i {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$small-and-down} {
+  $n-grid-cols-s: 1;
+  $col-width-s: 100%/$n-grid-cols-s;
+
+  .Portfolio {
+
+    .grid-sizer, .grid-item {
+      width: $col-width-s;
+    }
+
+    &-thumbnail {
+      &:hover &Info{
+        a{
+          &.modal-trigger{
+            display: none;
+          }
+
+          i {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}

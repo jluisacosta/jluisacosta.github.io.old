@@ -1,0 +1,27 @@
+header#cover.Cover.container.scrollspy
+  img.responsive-img(src='./video/coding-background.png')
+  video.responsive-video(autoplay loop poster='./video/coding-background.png')
+    source(type="video/webm" src="./video/coding-background.webm")
+    source(type="video/mp4" src="./video/coding-background.mp4")
+    source(type="video/ogv" src="./video/coding-background.ogv")
+    | Your browser does not support the video tag. I suggest you upgrade your browser.
+  .Cover-mask
+  .Cover-intro.container.valign-wrapper
+    .valign.center-block.center
+      a(href='/')
+        img.Cover-logo.animated.fadeIn(src='./img/jluisacosta-logo.png')
+      a(href='/')
+        h1 J Luis Acosta
+      h2 Engineer, web developer and technology enthusiast
+      ul
+        li
+          a.btn-floating.waves-effect.waves-light.hoverable(href='https://www.facebook.com/ybexfish', target='_blank')
+            i.material-icons.fa.fa-facebook-f
+        li
+          a.btn-floating.waves-effect.waves-light.hoverable(href='https://github.com/jluisacosta', target='_blank')
+            i.material-icons.fa.fa-github
+        li
+          a.btn-floating.waves-effect.waves-light.hoverable(href='https://mx.linkedin.com/in/jluisacosta', target='_blank')
+            i.material-icons.fa.fa-linkedin
+      a.Cover-downButton(href='#about-me')
+        i.medium.material-icons expand_more

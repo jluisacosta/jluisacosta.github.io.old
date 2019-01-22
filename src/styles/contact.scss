@@ -1,0 +1,136 @@
+$contact-container-width: 85%;
+$form-fields-color: #ffea00 ;
+
+.Contact {
+  position: relative;
+  background: url('./img/map.png') no-repeat center center;
+  background-size: cover;
+  color: white;
+
+  .container {
+    opacity: 0;
+    position: inherit;
+    width: $contact-container-width;
+
+    h3 {
+      @extend .yellow-text, .text-accent-3;
+    }
+
+    h5 {
+      @extend .white-text;
+      margin-bottom: 2rem;
+    }
+
+    .input-field label {
+      display: block;
+      color: $form-fields-color;
+    }
+
+    .input-field input, .input-field textarea{
+      border-bottom-color: white;
+      border-bottom-width: 2px;
+    }
+
+    .input-field input:focus, .input-field textarea:focus {
+      border-bottom: 1px solid $form-fields-color;
+      box-shadow: 0 1px 0 0 $form-fields-color;
+
+      + label {
+        color: $form-fields-color !important;
+      }
+    }
+
+    .input-field input.valid, .input-field textarea.valid {
+      border-bottom-color: #ffff00;
+      border-bottom-width: 2px;
+      box-shadow: 0 1px 0 0 $form-fields-color;
+    }
+
+    .input-field input.invalid, .input-field textarea.invalid {
+      border-bottom-color: #e53935;
+      border-bottom-width: 2px;
+      box-shadow: 0 1px 0 0 #e53935;
+    }
+
+    .input-field .prefix.active {
+      color: #18ffff;
+    }
+
+    button.btn-large {
+      @extend .cyan, .darken-1;
+
+      &:hover {
+        @extend .yellow, .darken-2;
+      }
+    }
+  }
+
+  &-mask {
+    @extend .cyan, .darken-1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: .5;
+  }
+
+  .col.l4{
+    position: relative;
+  }
+
+  &-infoMask {
+    @extend .yellow;
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0 0.75rem;
+  }
+
+  &-info {
+    position: inherit;
+    padding: 1rem 2rem;
+
+    li {
+      margin-bottom: 1rem;
+
+      i {
+        @extend .cyan-text, .text-darken-2;
+        margin-right: .5rem;
+        font-size: 1.5rem;
+      }
+
+      p, a {
+        color: #00838f !important;
+        display: inline;
+        font-size: 1.2rem;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+  .Contact {
+
+    form{
+      margin-bottom: 2rem;
+    }
+
+  }
+}
+
+@media #{$small-and-down} {
+
+  .Contact{
+    &-info{
+      padding: .5rem 1.5rem;
+
+      p, a {
+        font-size: 1.1rem !important;
+      }
+    }
+  }
+}
